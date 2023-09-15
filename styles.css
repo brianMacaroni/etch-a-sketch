@@ -1,0 +1,23 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 400px;
+  height: 400px;
+}
+
+.box {
+  border: black;
+  border-style: solid;
+  width: 20px;
+  height: 20px;
+}
