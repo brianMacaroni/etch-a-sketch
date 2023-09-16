@@ -38,3 +38,17 @@ body {
   margin-right: 130px;
   flex-direction: column;
 }
+
+.footer {
+  margin-left: 50px;
+}
+
+a#ye:hover,
+a#ye:link {
+  color: royalblue;
+  text-decoration: rgb(227, 40, 40) wavy underline;
+}
+
+a:visited {
+  color: crimson;
+}

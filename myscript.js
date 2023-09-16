@@ -151,7 +151,10 @@ function rainbow() {
   body.ondragstart = function () {
     return false;
   };
-  button1.setAttribute("style", "background-color:yellow;");
+  button1.setAttribute(
+    "style",
+    "background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);"
+  );
   button3.removeAttribute("style", "background-color: none");
 }
 
