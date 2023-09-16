@@ -7,17 +7,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Griffy", cursive;
 }
 
 .container {
   display: flex;
-  width: 400px;
-  height: 400px;
+  width: 960px;
+  height: 600px;
+  border: black;
+  border-style: solid;
+  box-shadow: 10px 5px 5px grey;
 }
 
 .box {
-  border: black;
-  border-style: solid;
-  width: 20px;
-  height: 20px;
+  flex-grow: 1;
+  flex: 1 1 auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  margin-right: 130px;
+  flex-direction: column;
 }
