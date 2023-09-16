@@ -8,6 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Griffy", cursive;
+  background-color: rgb(247, 250, 252);
 }
 
 .container {
@@ -17,6 +18,7 @@ body {
   border: black;
   border-style: solid;
   box-shadow: 10px 5px 5px grey;
+  background-color: white;
 }
 
 .box {

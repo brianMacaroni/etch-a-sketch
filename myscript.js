@@ -19,11 +19,11 @@ const button = document.querySelector(".ye");
 button.addEventListener("click", newCanvas);
 let randomColor = Math.floor(Math.random() * 16777215).toString(16);
 const button1 = document.querySelector(".ye1");
-button1.addEventListener("click", rainbow);
+button1.addEventListener("click", () => rainbow());
 const button2 = document.querySelector(".ye2");
 button2.addEventListener("click", clear);
 const button3 = document.querySelector(".ye3");
-button3.addEventListener("click", eraser);
+button3.addEventListener("click", () => eraser("white"));
 
 function makeCanvas() {
   let isMouseDown = false;
@@ -81,35 +81,8 @@ function clear() {
   });
 }
 
-function eraser() {
-  let isMouseDown = false;
-  const boxes = document.querySelectorAll(".box");
-  const body = document.querySelector("body");
-
-  boxes.forEach((box) => {
-    box.addEventListener("mousedown", () => {
-      isMouseDown = true;
-      box.setAttribute("style", "background-color: white");
-      console.log(isMouseDown);
-    });
-    box.addEventListener("mousemove", () => {
-      if (isMouseDown) {
-        //do stuff
-        box.setAttribute("style", "background-color: white");
-      }
-    });
-  });
-
-  //mouseup over all of body. removes case of leaving canvas and being stuck drawing
-  body.addEventListener("mouseup", () => {
-    isMouseDown = false;
-    console.log(isMouseDown);
-  });
-
-  //no dragging of canvas
-  body.ondragstart = function () {
-    return false;
-  };
+function eraser(color) {
+  baseMethod(color);
   button3.setAttribute("style", "background-color:yellow;");
   button1.removeAttribute("style", "background-color: none");
 }
@@ -170,6 +143,38 @@ function closeEraser() {
     button3.removeAttribute("style", "background-color: none");
     button1.removeAttribute("style", "background-color: none");
   });
+}
+
+function baseMethod(color) {
+  let isMouseDown = false;
+
+  const boxes = document.querySelectorAll(".box");
+  const body = document.querySelector("body");
+
+  boxes.forEach((box) => {
+    box.addEventListener("mousedown", () => {
+      isMouseDown = true;
+      box.setAttribute("style", `background-color: ${color}`);
+      console.log(isMouseDown);
+    });
+    box.addEventListener("mousemove", () => {
+      if (isMouseDown) {
+        //do stuff
+        box.setAttribute("style", `background-color: ${color}`);
+      }
+    });
+  });
+
+  //mouseup over all of body. removes case of leaving canvas and being stuck drawing
+  body.addEventListener("mouseup", () => {
+    isMouseDown = false;
+    console.log(isMouseDown);
+  });
+
+  //no dragging of canvas
+  body.ondragstart = function () {
+    return false;
+  };
 }
 
 closeEraser();
