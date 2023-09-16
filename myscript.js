@@ -72,6 +72,8 @@ function newCanvas() {
     }
   }
   makeCanvas();
+  button3.removeAttribute("style", "background-color: none");
+  button1.removeAttribute("style", "background-color: none");
 }
 
 function clear() {
